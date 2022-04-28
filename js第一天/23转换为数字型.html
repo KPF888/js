@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换为数字型</title>
+    <script>
+        // parseInt()函数转换为整形取整
+        //var age = prompt('请输入年龄:');
+        /*         console.log(parseInt(age));//18
+                console.log(typeof (parseInt(age)));//number */
+        console.log(parseInt('120px'));//120 会去掉px单位
+        // parseFloat()转换为浮点型
+        var age1 = '3.14';
+        console.log(parseFloat(age1));//3.14
+        console.log(typeof (parseFloat(age1)));//number
+        console.log(parseFloat('120px'));//120
+        //利用Number()转换
+        console.log(Number('123'));
+        console.log(Number('1.23'));
+        //利用算术运算符隐式转换
+        console.log('12' - 0);//12
+        console.log('123' - '120');//3
+        console.log('123' * 1);//123
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

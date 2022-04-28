@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字型</title>
+    <script>
+        var num = 10;//属于数字型
+        var PI = 3.14;//小数也属于数字型
+        // 1.数字前面加0表示8进制
+        var a = 010;
+        console.log(a);
+        var b = 012;
+        console.log(b);
+        // 2.数字前面加0x表示16进制
+        var c = 0x9;
+        console.log(c);
+        var d = 0xa;
+        console.log(d);
+        // 3.数字型取值范围
+        console.log(Number.MAX_VALUE);//最大值
+        console.log(Number.MIN_VALUE);//最小值
+        console.log(Number.MAX_VALUE * 2);// 无穷大 Infinity
+        console.log(-Number.MAX_VALUE * 2);// 无穷小 -Infinity
+        // 4.非数字
+        console.log('js' - 10); //NaN  not a number
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
