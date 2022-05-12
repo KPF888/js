@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短路运算(逻辑中断)</title>
+    <script>
+        //逻辑与 如果第一个表达式有确定的值就不再向后进行逻辑运算 第一个表达式为假则返回第一个表达式 第一个表达式为真则返回第二个表达式
+        console.log(0 && 2 && 2 * 3);//0
+        console.log(1 && 2 && 2 * 3);//6
+        //逻辑或 如果第一个表达式有确定的值就不再向后进行逻辑运算 第一个表达式为真则返回第一个表达式 第一个表达式为假则返回第二个表达式
+        console.log(0 || 2 || 2 * 3);//2
+        console.log(1 || 2 || 2 * 3);//1
+        //可连续运算
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
