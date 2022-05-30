@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.打印人的一生
+        var age = 1;
+        do {
+            console.log('年龄是' + age + '岁');
+            age++;
+        } while (age <= 100);
+        //2.打印1-100整数的和
+        var sum = 0;
+        var i = 0;
+        do {
+            sum += i;
+            i++;
+        } while (i <= 100);
+        console.log(sum);
+
+        //3.你爱我吗
+        var ans = prompt('你爱我吗？');
+        do {
+            ans = prompt('你爱我吗？');
+        } while (ans !== '爱');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
