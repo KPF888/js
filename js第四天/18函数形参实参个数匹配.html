@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getSum(a, b) {
+            return a + b;
+        }
+        //1.如果实参个数多余形参个数 那么从左向右接收形参个数的参数 多余的参数不参与运算
+        console.log(getSum(5, 3, 3));//8
+
+        //1.如果实参个数少余形参个数 多余的形参为undefined 任何数加上undefined都为NaN
+        console.log(getSum(5));//NaN
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

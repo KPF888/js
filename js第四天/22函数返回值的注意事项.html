@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. return 返回值并且会结束函数
+        function get(num1, num2) {
+            num1 = 1
+            return num1;
+            alert('return结束函数，此句不会被执行');
+        }
+        console.log(get(1));
+        //2. return 只能返回一个变量或者数组 逗号表达式返回最后一个变量
+        function get1(num1, num2) {
+            num1 = 1, num2 = 2;
+            return num1, num2;
+        }
+        console.log(get1(1, 2));
+
+        function get2(num1) {
+            return [1, 2, 35, 4, 6, 5];
+        }
+        console.log(get2());
+
+        //3.如果函数没有return 则返回 undefined
+        function Sss(a) {
+            a = 1;
+        }
+        console.log(Sss(2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
