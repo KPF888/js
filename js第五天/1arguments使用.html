@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //arguments使用方法 只有函数才有arguments 并且arguments是函数内置的
+        function fn() {
+            console.log(arguments);//arguments存放了所有传来的实参
+            //可以遍历arguments
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fn(1, 2, 3);
+        fn(1, 2, 3, 4, 5)
+        //伪数组 不是真正意义上的数组
+        //1.也具有length属性
+        //2.也是通过索引方式进行储存
+        //3.没有真正数组的一些方法 pop() push() 等
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

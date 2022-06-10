@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sort(arr) {
+            for (var i = 1; i <= arr.length - 1; i++) {
+                for (var j = 1; j <= arr.length - i; j++) {
+                    var temp = 0;
+                    if (arr[j - 1] > arr[j]) {
+                        temp = arr[j - 1];
+                        arr[j - 1] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([5, 6, 4, 8, 9, 1]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

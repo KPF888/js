@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //函数的两种声明方式
+        //1.利用函数关键字自定义函数 （函数命名）
+        function name() {
+            console.log('函数关键字自定义函数');
+        }
+        name();
+
+        //2.函数表达式 匿名函数
+        var num = function (year) {
+            console.log('函数表达式 匿名函数');
+            console.log(year);
+        }
+        num(555);
+        //num是变量名不是函数名
+        //函数表达式声明方式跟函数声明方式差不多 但是变量里装的是值 函数表达式装的是函数
+        //函数表达式也可以传递参数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

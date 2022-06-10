@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //构造函数 是对象的骨架或设计图
+        function Star(name, age, sex) {
+            this.uname = name;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+
+
+        //对象 是一个具体的事物
+        var yudi = new Star('煜帝', 18, '男');
+        console.log(yudi);
+        //利用构造函数创建对象的过程也称为对象的实例化
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

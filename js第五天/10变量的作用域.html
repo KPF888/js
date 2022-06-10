@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //变量的作用域 根据变量作用域的不同 分为全局变量 局部变量
+        //全局变量 在全局作用域下的变量
+        var a = 10;
+        console.log(a);
+
+        //局部变量 在函数内部的变量
+        function fn() {
+            var b = 0;
+            console.log(a);
+            console.log(b);
+        }
+        fn();
+
+        //变量不声明 默认是全局变量
+        function fn1(aru) {
+            c = 120;
+        }
+        console.log(c);
+
+        //全局变量在关闭浏览器时才会销毁
+        //局部变量在函数结束时就销毁
+        //函数的形参也算局部变量
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

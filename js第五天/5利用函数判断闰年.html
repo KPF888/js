@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //能被400整除 或者 能被4整除但是不能被100整除的年份
+        function isLeap(a) {
+            return (a % 400 == 0) || (a % 4 == 0 && a % 100 != 0) ? 1 : 0;
+        }
+        for (var i = 1000; i <= 2000; i++) {
+            if (isLeap(i)) {
+                console.log(i);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

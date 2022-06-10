@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 姓名 年龄 性别 技能
+        // function 构造函数名() {
+        //     this.属性 = 值;
+        //     this.方法 = function () {
+
+        //     }
+        // }
+        // new 构造函数名();
+
+        function Star(name, age, sex) {
+            this.uname = name;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+        var yudi = new Star('煜帝', 18, '男');//调用函数返回一个对象
+        yudi.sing('无敌的我');
+        //构造函数首字母要大写
+        //构造函数不需要return
+        //调用构造函数必须使用  new
+        //只要new Star 调用函数就创建了一个对象 yudi = {}
+        //属性和方法前面必须添加this
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
