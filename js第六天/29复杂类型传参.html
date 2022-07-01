@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //复杂类型的变量都是在栈区存放的一个地址 地址再指向堆区的具体值
+        function Fn(x) {//此时x 存储的是p的空间的地址 该地址指向堆区的p对象
+            console.log(x.name); // 薛之谦
+            x.name = '林俊杰';
+        }
+
+        function Stur(name) {
+            this.name = name;
+        }
+
+        var p = new Stur('薛之谦');
+        Fn(p);
+        console.log(p.name);//林俊杰
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

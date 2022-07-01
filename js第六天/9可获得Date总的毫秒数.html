@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1970年1月1日至今的毫秒数  时间戳
+        //通过 valueOf() getTime() 得到
+        var date = new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+
+        //简单的写法 (最常用的写法)
+        var date1 = +new Date();//返回时间戳
+        console.log(date1);
+
+        //h5新增的获得总的毫秒数写法
+        console.log(Date.now());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

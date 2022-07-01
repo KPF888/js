@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.replace(被替换的字符,替换为什么字符) 替换字符 只会替换第一个字符
+        var str = 'andyadsa';
+
+        console.log(str.replace('a', 'd'));
+
+        //把'ooosdoooosdooo' 中的o都替换成 a
+        var str1 = 'ooosdoooosdooo';
+        while (str1.indexOf('o') !== -1) {
+            str1 = str1.replace('o', 'a');
+        }
+        console.log(str1);
+
+        //2.  字符串转换为数组 split(字符串中分隔元素的符号) 与join()把数组转换成字符串相反
+        var str2 = 'red,pink,blue';
+        console.log(str2.split(','));
+        var str3 = 'red&blue&skyblue';
+        console.log(str3.split('&'));
+
+        //3.toUpperCase() 转换为大写
+        console.log(str1.toUpperCase());
+
+        //4.toLowerCase() 转换为小写
+        console.log(str1.toLowerCase());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

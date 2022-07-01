@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Date() 日期对象 是一个构造函数 必须new创建
+
+        //使用Date() 如果没有传参 则返回当前系统时间
+        var date = new Date();
+        console.log(date);
+
+        //参数常用的写法 数字型 2022,6,14 或者字符型 '2022-6-14 8:30:8'
+        var date1 = new Date(2022, 5, 6);
+        var date2 = new Date('2022-5-6 8:8:8')
+        console.log(date1);//返回的是6月 不是5月
+        console.log(date2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

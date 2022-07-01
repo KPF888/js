@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.求绝对值
+        console.log(Math.abs(-101));
+        console.log(Math.abs('-101'));//隐式转换 会把字符串型的数据转换成数字型的数据
+        console.log(Math.abs('pink'));//NaN
+
+        //三个取整方法
+        //(1)向下取整 Math.floor() 取比它小的
+        console.log(Math.floor(1.9));
+        console.log(Math.floor(-1.9));
+        //(2)向上取整 Math.ceil() 取比它大的
+        console.log(Math.ceil(1.9));
+        console.log(Math.ceil(-1.9));
+        //(3)Math.round() 四舍五入
+        console.log(Math.round(1.9));
+        console.log(Math.round(-1.9));
+
+        console.log(Math.round(-1.1));
+        console.log(Math.round(-1.5));//四舍五入 .5就往大的取 所以是-1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //核心思想：遍历旧数组 把新数组里面没有的元素存入新数组
+
+        //封装成去重函数
+        function unique(arr) {
+            var narr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (narr.indexOf(arr[i]) == -1) {
+                    narr.push(arr[i]);
+                    //narr[narr.length] = arr[i];
+                }
+            }
+            return narr;
+        }
+
+
+        var arr = [1, 2, 2, 3, 5, 6, 2, 2, 5, 5, 6, 6, 4, 2, 8, 95, 6, 6];
+        var narr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (narr.indexOf(arr[i]) == -1) {
+        //         narr.push(arr[i]);
+        //         //narr[narr.length] = arr[i];
+        //     }
+        // }
+        narr = unique(arr);
+
+        narr.sort(
+            function (a, b) {
+                return a - b;
+            }
+        )
+
+        console.log(narr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

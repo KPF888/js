@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //核心算法： 通过charAt()遍历字符串 把每个字符给对象
+        //如果对象没有该字符就创建属性(赋值为1)，如果有就加一
+        //遍历对象 得到最大值和该字符
+        var o = {};
+        var str = 'what is your name';
+        var max = 0;
+        var maxChar = '';
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars] == undefined) {
+                o[chars] = 1;
+            } else {
+                o[chars]++;
+            }
+        }
+        console.log(o);
+        for (var k in o) {
+            if (max < o[k]) {
+                maxChar = k;
+            }
+            max = max < o[k] ? o[k] : max;
+        }
+        console.log('出现最多的字符是:' + maxChar + '出现的次数是:' + max);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

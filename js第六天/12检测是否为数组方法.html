@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var arr1 = [];
+                for (var i = 0; i < arr.length; i++) {
+                    arr1[arr1.length] = arr[arr.length - i - 1];
+                }
+                return arr1;
+            } else {
+                return 'error 请输入数组类型';
+            }
+
+        }
+
+        var arr = [1, 2, 3];
+        var obj = {};
+        //两种方法检测是否为数组
+        //1.instanceof
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array);
+        //2.Array.isArray() h5新增方法 支持ie9以上
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+
+        console.log(reverse(1, 2, 3));
+        console.log(reverse([1, 2, 3]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.Math.random() 随机生成一个小数x       0<=x<1  x属于[0,1)
+        //2.这个方法不需要参数
+        console.log(Math.random());
+
+        //3.得到两个数之间的随机整数
+        function getRandom(a, b) {
+            return Math.floor(Math.random() * ((b - a + 1))) + a;
+        }
+        console.log(getRandom(0, 10));
+
+        //4.随机点名
+        var arr = ['张三', '李四', '王五', '赵六', '煜帝'];
+        console.log(arr[getRandom(0, arr.length - 1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
