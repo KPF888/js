@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/上午好.gif" alt="">
+    <div></div>
+    <script>
+        //需要用到日期内置对象
+        //需要用到多分支语句来选择不同图片与问候语
+        //需要用到img存放图片 和 div存放问候语
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        var date = new Date();
+        var hours = date.getHours();
+        if (hours < 12) {
+            img.src = 'images/上午好.gif';
+            div.innerHTML = '上午好，好好写代码';
+        } else if (hours < 18) {
+            img.src = 'images/下午好.gif';
+            div.innerHTML = '下午好，好好写代码';
+        } else {
+            img.src = 'images/晚上好.gif';
+            div.innerHTML = '晚上好，好好写代码';
+        }
+    </script>
+</body>
+
+</html>

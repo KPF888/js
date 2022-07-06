@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 480px;
+            margin: 100px auto;
+            line-height: 20px;
+        }
+
+        input {
+            outline: none;
+            width: 120px;
+            height: 25px;
+            border: 1px solid #ccc;
+            color: #ccc;
+            font: 12px/1.5 tahoma, arial, 宋体;
+            /* 不设置字体输入框会上下动 */
+        }
+
+        .pwd {
+            margin-left: 2px;
+        }
+
+        .pink {
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="邮箱/ID/手机号">
+        <input type="text" name="" class="pwd" value="密码">
+    </div>
+
+    <script>
+        var text = document.querySelector('input');
+        var pwd = document.querySelector('.pwd');
+
+        pwd.onclick = function () {
+            pwd.type = 'password';
+            if (this.value === '密码') {
+                this.value = '';
+            }
+            pwd.className = 'pwd pink';
+        }
+        pwd.onblur = function () {
+            if (this.value === '') {
+                this.value = '密码';
+                pwd.type = 'text';
+            }
+            pwd.className = 'pwd';
+        }
+
+        text.onclick = function () {
+            if (this.value === '邮箱/ID/手机号') {
+                this.value = '';
+            }
+            text.className = 'pwd pink';
+        }
+        text.onblur = function () {
+            if (this.value === '') {
+                this.value = '邮箱/ID/手机号';
+            }
+            text.className = 'pwd';
+        }
+    </script>
+</body>
+
+</html>

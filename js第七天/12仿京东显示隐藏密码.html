@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            margin: 100px auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" id="pwd">
+    </div>
+    <script>
+        //密码显示隐藏
+        //1.获取元素 img input
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+
+        //2.注册事件 处理程序
+        var flag = 0;
+        eye.onclick = function () {
+            if (flag == 0) {
+                pwd.type = 'text';
+                this.src = 'images/open.png';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                this.src = 'images/close.png';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

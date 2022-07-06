@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ljj">林俊杰</button>
+    <button id="xzq">薛之谦</button>
+    <img src="images/JJL.jpeg" alt="">
+
+
+    <script>
+        //1.获取元素
+        var ljj = document.getElementById('ljj');
+        var xzq = document.getElementById('xzq');
+        var img = document.querySelector('img');
+
+        //2.注册事件
+        ljj.onclick = function () {
+            img.src = 'images/JJL.jpeg';
+            img.title = '林俊杰';
+        }
+
+        xzq.onclick = function () {
+            img.src = 'images/XZQ.jpeg';
+            img.title = '薛之谦';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(255, 133, 0);
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            margin: 100px auto;
+            height: 40px;
+            border: 1px solid rgb(255, 133, 0);
+            border-top: 3px solid rgb(255, 133, 0);
+        }
+
+        .none {
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+            width: 180px;
+            height: 30px;
+            border: 1px solid rgb(255, 133, 0);
+            border-top: none;
+        }
+
+        ul {
+            position: absolute;
+            top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box none">
+        <a href="#" id="link">移动客户端</a>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        var link = document.getElementById('link');
+        var box = document.getElementById('box');
+
+        link.onclick = function () {
+            box.className = 'box';
+        }
+        link.onblur = function () {
+            box.className = 'box none';
+        }
+    </script>
+</body>
+
+</html>

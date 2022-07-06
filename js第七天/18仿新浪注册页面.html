@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .register {
+            width: 330px;
+            margin: 100px auto;
+        }
+
+        .ipt {
+            outline: none;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            padding-left: 16px;
+            background: url(images/mess.png) no-repeat left center;
+        }
+
+        .wrong {
+            color: red;
+            background: url(images/wrong.png) no-repeat left center;
+        }
+
+        .right {
+            color: green;
+            background: url(images/right.png) no-repeat left center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <input type="password" name="" id="" class="ipt">
+        <p class="message">请输入6-16位密码</p>
+    </div>
+
+    <script>
+        // 1.获取元素
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+
+        //2.注册事件 失去焦点
+        ipt.onblur = function () {
+            if ((this.value.length < 6 || this.value.length > 16) && this.value !== '') {
+                message.className = 'message wrong';
+                message.innerHTML = '输入位数错误，请检查.';
+            } else if (this.value === '') {
+                message.className = 'message';
+                message.innerHTML = '请输入6-16位密码';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '格式正确!';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

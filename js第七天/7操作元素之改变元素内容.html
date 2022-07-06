@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>显示当前系统时间</button>
+    <div>时间</div>
+    <p></p>
+    <script>
+        //1.获取事件源
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        console.log(div);
+        //2.注册事件  
+        //3.事件执行程序 
+        btn.onclick = function () {
+            div.innerText = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay() == 0 ? 7 : date.getDay();
+            switch (day) {
+                case 1:
+                    day = '一'
+                    break;
+                case 2:
+                    day = '二'
+                    break;
+                case 3:
+                    day = '三'
+                    break;
+                case 4:
+                    day = '四'
+                    break;
+                case 5:
+                    day = '五'
+                    break;
+                case 6:
+                    day = '六'
+                    break;
+                case 7:
+                    day = '日'
+                    break;
+                default:
+                    alert('日期错误');
+                    break;
+            }
+            return '日期:' + year + '年' + month + '月' + dates + '日' + '星期' + day;
+        }
+
+        //元素可以不用添加事件 直接用js赋值
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+    </script>
+</body>
+
+</html>

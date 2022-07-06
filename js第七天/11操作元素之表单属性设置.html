@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>提交</button>
+    <input type="text" value="请输入内容">
+
+    <script>
+        //1.获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+
+        //2.注册事件 执行程序
+        btn.onclick = function () {
+            //input.innerHTML='点击了'; 只适用于普通盒子
+            input.value = '点击了';
+            // 表单中的值是通过value 来修改的
+            //禁用表单使用 disabled 禁用按钮
+            // btn.disabled = true;
+            this.disabled = true;
+            // this 指向的是事件函数的调用者
+        }
+    </script>
+</body>
+
+</html>
