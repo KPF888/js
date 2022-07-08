@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 300px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 30px;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: skyblue;
+            color: aliceblue;
+            font-family: 微软雅黑;
+            font-size: 14px;
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_All">
+                </th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //1.全选和取消全选做法 让tbody中的checked 跟随 表头的状态即可
+        var j_All = document.getElementById('j_All');//全选 复选框
+        var j_inputs = document.querySelector('tbody').getElementsByTagName('input');//跟随的复选框
+        j_All.onclick = function () {
+            for (var i = 0; i < j_inputs.length; i++) {
+                // this.checked 返回true或者false
+                j_inputs[i].checked = this.checked;
+            }
+        }
+
+        //点击下方复选框时检测所有复选框，如果有未选中则全选也变为未选中 如果全部选中则全选也变为选中
+        for (var i = 0; i < j_inputs.length; i++) {
+            j_inputs[i].onclick = function () {
+                // var flag = 0;
+                // for (var i = 0; i < j_inputs.length; i++) {
+                //     if (j_inputs[i].checked == true) {
+                //         flag++;
+                //     }
+
+                // }
+                // console.log(flag);
+
+                // if (flag != 4) {
+                //     j_All.checked = false;
+                // } else if (flag == 4) {
+                //     j_All.checked = true;
+                // }
+                var flag = true;
+                for (var i = 0; i < j_inputs.length; i++) {
+                    if (!j_inputs[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                j_All.checked = flag;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

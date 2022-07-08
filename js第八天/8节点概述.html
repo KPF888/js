@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优势在于方便并且逻辑性强  文件内所有内容皆为节点 标签节点 元素节点 文本节点等 -->
+    <!-- 一般节点至少有nodeType(节点类型) nodeName(节点名称) nodeValue(节点值) 三个元素 -->
+    <!-- 元素节点nodeType为1 属性节点nodeType为2 文本节点nodeType为3(文字空格换行等) -->
+    <!-- 实际开发中主要操作元素节点 -->
+
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector('.box');
+        console.dir(box);
+        // nodeName: "DIV"
+        // nodeType: 1
+        // nodeValue: null
+    </script>
+</body>
+
+</html>

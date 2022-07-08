@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(images/1.jpg) no-repeat;
+        }
+
+        ul {
+            width: 592px;
+            margin: 200px auto;
+        }
+
+        ul li img {
+            width: 140px;
+            height: 80px;
+            border: 2px 4px;
+            border: solid white;
+        }
+
+        ul li {
+            float: left;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        var body = document.body;
+
+        console.log(imgs);
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                //this.src 获取当前图片的地址
+                body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="erweima">×</div>
+    </div>
+
+    <script>
+        // 1.父节点 parentNode
+        var erweima = document.querySelector('.erweima');
+        // var box=document.querySelector('.box');
+        console.log(erweima.parentNode);
+        var box = erweima.parentNode;//获取的是离自己最近的父级元素(爸爸)
+    </script>
+</body>
+
+</html>

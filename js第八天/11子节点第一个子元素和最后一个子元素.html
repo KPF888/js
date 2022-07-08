@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+    </ol>
+
+    <script>
+        //获取第一个和最后一个元素
+        var ol = document.querySelector('ol');
+
+        //1.firstChild获取的是第一个节点 是文本节点 nodeType 3 lastChild 同理
+        console.log(ol.firstChild);
+        console.log(ol.lastChild);
+
+        //2.firstElementChild 返回第一个子元素节点 IE9以上才支持
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+
+
+        //3.element.children 实际开发最常用 伪数组
+        var first = ol.children[0];
+        var last = ol.children[ol.children.length - 1];
+        console.log(first);
+        console.log(last);
+    </script>
+</body>
+
+</html>

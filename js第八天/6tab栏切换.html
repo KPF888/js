@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tab {
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+        }
+
+        .tablist {
+            height: 40px;
+            border-bottom: 2px solid red;
+        }
+
+        ul li {
+            float: left;
+            width: 160px;
+            list-style-type: none;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .con {
+            display: none;
+        }
+
+        .current {
+            color: aliceblue;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tablist">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tabcon">
+            <div class="con" style="display: block;">商品介绍模块内容</div>
+            <div class="con">规格与包装模块内容</div>
+            <div class="con">售后保障模块内容</div>
+            <div class="con">商品评价模块内容</div>
+            <div class="con">手机社区模块内容</div>
+        </div>
+    </div>
+
+    <script>
+        //1.获取元素 点击li 去除其他li的样式给当前li添加current 方式为添加类名
+        //2.并且显示对应的 内容 清除其他的内容 然后显示对应的内容
+        var lis = document.querySelectorAll('li');
+        var cons = document.querySelector('.tabcon').querySelectorAll('div');
+
+        for (var i = 0; i < lis.length; i++) {
+            //给五个con 设置索引号
+            lis[i].setAttribute('index', i);
+
+
+            //注册事件
+            lis[i].onclick = function () {
+                //清除所有li的类名
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+
+                // 清除其他内容
+                for (var i = 0; i < lis.length; i++) {
+                    cons[i].style.display = 'none'
+                }
+
+                //显示对应内容
+                var index = this.getAttribute('index')
+                console.log(index);
+                cons[index].style.display = 'block';
+
+
+                //给当前li 添加current类名
+                this.className = 'current';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div getTime="20" data-index="1" data-logo-ind="andy"></div>
+
+    <script>
+        var div = document.querySelector('div');
+
+        console.log(div.getAttribute('getTime'));
+
+        //1.H5新增规定 自定义属性都采取 data-自定义属性 的形式
+        console.log(div.getAttribute('data-index'));
+
+        //2.第二种获取自定义属性的方式 element.dataset.属性 但是有严重兼容性问题 只兼容IE11
+        // dataset是自定义属性对象的集合
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+        console.log(div.dataset['index']);
+
+        //如果有多个横杠则采取驼峰命名法 element.dataset.logoInd
+        console.log(div.dataset.logoInd);
+        console.log(div.dataset['logoInd']);
+    </script>
+</body>
+
+</html>
