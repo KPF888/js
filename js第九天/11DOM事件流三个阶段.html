@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+
+        .son {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+
+    <script>
+        //DOM事件流 三个阶段 捕获阶段(上向下)  目标阶段  冒泡阶段(下向上)
+        //1.JS代码只能执行捕获或冒泡的一个阶段
+        //2.onclick 和 attachEvent 只能得到冒泡阶段
+        var son = document.querySelector('.son');
+
+        //3.addEventListener第三个参数为true时就是捕获阶段 document -> body -> father -> son
+        //事件同时触发时就会按照捕获阶段的顺序执行
+        // var father = document.querySelector('.father');
+        // son.addEventListener('click', function () {
+        //     alert('son捕获阶段');
+        // }, true);
+        // father.addEventListener('click', function () {
+        //     alert('father捕获阶段');
+        // }, true);
+
+        //4.addEventListener第三个参数为false 或者 为空时就是冒泡阶段 son -> father -> body -> document
+        //事件同时触发时就会按照冒泡阶段的顺序执行
+        var father = document.querySelector('.father');
+        son.addEventListener('click', function () {
+            alert('son冒泡阶段');
+        }, false);
+        father.addEventListener('click', function () {
+            alert('father冒泡阶段');
+        }, false);
+
+
+        // 注意
+        //1.实际开发中很少使用捕获阶段
+        //2.有些事件没有冒泡阶段例如 onblur onfocus onmouseenter onmouseleave
+    </script>
+</body>
+
+</html>

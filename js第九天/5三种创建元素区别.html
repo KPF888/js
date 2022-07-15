@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+
+    <script>
+        //三种创建元素方式区别
+        //1.document.write() 会导致页面重绘  如果加载完成后使用这个方法，原来的页面就没有了
+        // window.onload = function () {//当整个文档流加载完成后再执行以下语句
+        //     document.write('<div>123</div>');
+        // }
+
+
+        //2.innerHTML() 创建元素
+        var inner = document.querySelector('.inner');
+        inner.innerHTML = '<a href="javascript:;">百度</a>';
+
+
+        //3.document.createElement() 创建元素  node.appendChild(child) 追加元素
+        var create = document.querySelector('.create');
+        var a = document.createElement('a');
+        create.appendChild(a);
+
+
+
+        //element.innerHTML()  与  document.creatElement() 效率对比结果
+        //用innerHTMl采取数组储存再放入的方式最快
+        //用document.creatElement()比innerHTML慢但结构更清晰
+        //用innerHTML采取逐个拼接的方式最慢
+    </script>
+</body>
+
+</html>

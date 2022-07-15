@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <a href="https://www.baidu.com">百度</a>
+    <form action="https://www.baidu.com">
+        <input type="submit" value="提交" name="sub">
+    </form>
+
+
+    <script>
+        //常见事件对象的属性和方法
+        //1.返回事件类型 e.type
+        var div = document.querySelector('div');
+        div.addEventListener('click', fn);
+        div.addEventListener('mouseover', fn);
+        div.addEventListener('mouseout', fn);
+        function fn(e) {
+            console.log(e.type);
+        }
+
+        //2.阻止默认行为(事件) 让链接不跳转或者让提交按钮不提交
+        var a = document.querySelector('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault();//阻止默认行为方法 DOM标准写法
+        })
+
+
+        //3.传统方式阻止默认行为
+        a.onclick = function () {
+            // e.preventDefault();//普通浏览器 方法
+
+            // e.returnValue;//属性 ie6 7 8浏览器
+
+            // return false;//只有传统方式才能使用 并且会直接结束函数
+        }
+    </script>
+</body>
+
+</html>

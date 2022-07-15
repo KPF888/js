@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        var divs = document.querySelectorAll('div');
+        //1.传统方式解绑事件
+        divs[0].onclick = function () {
+            alert('22');
+            divs[0].onclick = null;
+        }
+
+        // 2.侦听事件方式解绑事件eventTarget.removeEventListener()
+        divs[1].addEventListener('click', fn);//里面的fn不用加小括号
+        function fn() {
+            alert('666');
+            divs[1].removeEventListener('click', fn);
+        }
+
+        //3.跟attachEvent()配套的detachEvent()已经弃用 只支持ie9以下
+        // divs[2].attachEvent('onclick', fn1);//里面的fn不用加小括号
+        // function fn1() {
+        //     alert('666');
+        //     divs[2].detachEvent('click', fn);
+        // }
+    </script>
+</body>
+
+</html>

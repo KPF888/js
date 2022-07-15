@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+
+    <script>
+        var div = document.querySelector('div');
+
+        // div.onclick = function (event) {
+        //     console.log(event);
+        // }
+        div.addEventListener('click', function (e) {
+            e = window.event && e;
+            console.log(e);
+        })
+        // 1.event就是一个事件对象 写到侦听函数的括号里面 当形参来看
+        //2.事件对象只有有了事件才会存在，它是系统自动创建的 不需要传递参数
+        //3.事件对象是事件一系列相关数据的集合 如鼠标点击就包含了鼠标信息，例如鼠标坐标等 如果是键盘事件里面就包含了键盘有关的信息 如用户按下了哪个键
+        //4.事件对象可以自己命名 如evt e 实际开发中常用 e
+        // 5.事件对象也有兼容性问题 ie6 7 8 用 window.event
+    </script>
+</body>
+
+</html>

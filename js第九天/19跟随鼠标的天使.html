@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="image/angel.gif" alt="">
+
+    <script>
+        //思路 让图片的left 和 top 值分别等于 clientX 和clientY 的值
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            //不要忘记加单位px
+            img.style.left = e.clientX + 'px';
+            img.style.top = e.clientY + 'px';
+        })
+
+
+
+
+
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

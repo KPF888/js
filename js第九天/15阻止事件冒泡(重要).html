@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+
+        .son {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+
+    <script>
+        //阻止事件冒泡
+        //阻止冒泡 DOM 推荐标准 stopPropagation() 
+        var son = document.querySelector('.son');
+        var father = document.querySelector('.father');
+        son.addEventListener('click', function (e) {
+            alert('son冒泡阶段');
+            e.stopPropagation();
+            // e.cancelBubble = true;//ie6 7 8
+        }, false);
+        father.addEventListener('click', function () {
+            alert('father冒泡阶段');
+        }, false);
+        document.addEventListener('click', function () {
+            alert('document冒泡阶段')
+        })
+
+
+    </script>
+</body>
+
+</html>

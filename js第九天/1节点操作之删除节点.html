@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+    </ul>
+
+    <script>
+        //1.node.removeChild(child) 删除子节点 返回被删除的子节点
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+
+        btn.onclick = function () {
+            if (ul.children.length == 0) {
+                btn.disabled = true;
+            } else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

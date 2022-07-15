@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 400px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        //1.先准备好学生数据
+        var datas = [{
+            name: '魏璎珞',
+            object: 'Javascript',
+            score: 100
+        }, {
+            name: '弘历',
+            object: 'Javascript',
+            score: 98
+        }, {
+            name: '傅恒',
+            object: 'Javascript',
+            score: 99
+        }, {
+            name: '明玉',
+            object: 'Javascript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            object: 'Javascript',
+            score: 0
+        }]
+
+        //2.创建行 tr 行数等于学生对象的数量
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            //创建tr行
+            var tr = document.createElement('tr');
+
+            tbody.appendChild(tr);
+
+            //行里面创建单元格 td 数量等于对象的元素数
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+
+                tr.appendChild(td);
+                td.innerHTML = datas[i][k];
+            }
+
+            //3.创建有删除两个字的单元格
+            var del = document.createElement('td');
+            tr.appendChild(del);
+            del.innerHTML = '<a href="javascript:;">删除</a>';
+        }
+
+
+        //4.删除操作开始  node.removeChild(child)  这个a的父元素的父元素就是该行
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

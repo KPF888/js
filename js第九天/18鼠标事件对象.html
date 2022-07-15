@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //鼠标事件对象MouseEvent
+        //1.clientX,Y  鼠标到可视区域边界的坐标
+        document.addEventListener('click', function (e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log('--------------------');
+        })
+
+
+        //2.pageX,Y    鼠标到页面边界的坐标  最常用
+        document.addEventListener('click', function (e) {
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log('--------------------');
+        })
+
+        //3.screenX,Y   鼠标到电脑屏幕边界的坐标   了解即可
+        document.addEventListener('click', function (e) {
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+    </script>
+</body>
+
+</html>

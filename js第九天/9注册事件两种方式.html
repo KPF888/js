@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>ie9 以前版本才支持</button>
+
+    <script>
+        var btns = document.querySelectorAll('button');
+
+        //1.传统方式注册事件  
+        btns[0].onclick = function () {
+            alert('22');
+        }
+        btns[0].onclick = function () {
+            alert('33');
+        }
+
+        //2.方法监听注册事件target.addEventListener(type, listener, useCapture)  H5新增 w3c标准 推荐
+        //(1)里面的事件类型是字符型 必定加引号 而且不带on
+        //(2)同一个元素 同一个事件 可以添加多个侦听器(事件处理程序)
+        btns[1].addEventListener('click', function () {
+            alert('22');
+        })
+        btns[1].addEventListener('click', function () {
+            alert('33');
+        })
+
+
+        //3.attachEvent() w3c标准已经移除 ie9以前才支持
+        // btn[2].attachEvent('onclick', function () {
+        //     alert('55');
+        // })
+    </script>
+</body>
+
+</html>

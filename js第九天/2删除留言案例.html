@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            margin: 100px auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box textarea {
+            display: inline;
+            resize: none;
+            outline: none;
+            width: 149px;
+            height: 100px;
+        }
+
+        .box button {
+            width: 44px;
+        }
+
+        .box li {
+            overflow: hidden;
+            width: 200px;
+            height: 30px;
+            background-color: pink;
+            margin-top: 10px;
+            color: red;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        .box li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>发布</button>
+        <ul>
+        </ul>
+    </div>
+
+    <script>
+        //1.获取元素 textarea button li
+        var textarea = document.querySelector('textarea');
+        var btn = textarea.nextElementSibling;
+        var ul = document.querySelector('ul');
+
+        //2.注册事件
+        btn.onclick = function () {
+            if (textarea.value == '') {
+                alert('请输入内容');
+            } else {
+                //给ul添加li
+                //创建节点li
+                var li = document.createElement('li');
+                console.log(textarea.getAttribute('value'));
+                li.innerHTML = textarea.value + "<a href='javascript:;'>删除</a>";
+                //href='javascript:;' 阻止跳转  还有一种写法href='javascript:void(0);'
+
+
+                //从后面添加
+                // ul.appendChild(li);
+
+                //从前面插入li
+                ul.insertBefore(li, ul.children[0]);
+
+                //循环给每一个a添加事件
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
