@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 200px;
+            background-color: pink;
+        }
+
+        .banner {
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 500px;
+            background-color: purple;
+        }
+
+        .slider_bar {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            margin-left: 600px;
+            width: 50px;
+            height: 100px;
+            background-color: #ebebeb;
+        }
+
+        .slider_bar span {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            top: 100%;
+            background-color: red;
+            cursor: pointer;
+        }
+
+        .mb {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider_bar">
+        <span>返回顶部</span>
+    </div>
+    <div class="header w mb">头部区域</div>
+    <div class="banner w mb">banner区域</div>
+    <div class="main w">主体部分</div>
+
+    <script>
+        // window.pageYOffset  或者 window.scrollY  返回页面头部被卷曲的像素  
+        //而元素获取被卷曲的头部则是element.scrollTop
+
+        var slider_bar = this.document.querySelector('.slider_bar');
+        var banner = document.querySelector('.banner');
+        var back = slider_bar.children[0];
+        var main = document.querySelector('.main');
+
+        var slider_barTop = slider_bar.offsetTop;
+        var mainTop = main.offsetTop;
+        var bannerTop = banner.offsetTop;//一定要写到滚动的外面才安全
+        document.addEventListener('scroll', function () {
+            //当卷曲达到头部加上间距就显示返回顶部
+            //并且变成固定定位
+
+            if (window.pageYOffset >= banner.offsetTop) {
+                back.style.display = 'none';
+                slider_bar.style.position = 'fixed';
+                slider_bar.style.top = slider_barTop - bannerTop + 'px';
+            } else {
+                slider_bar.style.position = 'absolute';
+                slider_bar.style.top = slider_barTop + 'px';
+            }
+            if (window.pageYOffset >= mainTop) {
+                back.style.display = 'block';
+            } else {
+                back.style.display = 'none';
+            }
+        })
+        //点击返回顶部按钮就缓慢返回顶部
+        back.addEventListener('click', function () {
+            animate(window, 0);
+        })
+
+
+        // 在竖直方向上操作
+        function animate(obj, target, callback) {
+            //如果一直点击按钮就会一直加速
+            //解决方法是每次调用函数都先清除之前这个对象的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                //步长必须写在定时器内部 因为每一步都要重新计算
+                //需要进行一步向上取整  因为最后会出现步长等于0的情况
+                //如果是倒退时 step为负数 此时应该向下取整
+                var step = (target - obj.scrollY) / 10;
+                step = step < 0 ? Math.floor(step) : Math.ceil(step);
+                if (obj.scrollY == target) {
+                    clearInterval(obj.timer);
+
+                    //结束后执行回调函数
+                    if (callback) {
+                        callback();
+                    }
+
+                    obj.timer = null;//加了这一句才算真正停下来
+                }
+                // obj.style.left = obj.offsetLeft + step + 'px';
+                obj.scroll(0, obj.scrollY + step);
+            }, 15);
+        }
+    </script>
+</body>
+
+</html>

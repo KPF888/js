@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div>
+
+    </div>
+
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        btn.addEventListener('click', function () {
+            var time = 5;
+            div.innerHTML = '还有' + time + '秒跳转到主页';
+            time--;
+            var timer = setInterval(() => {
+                if (time != 0) {
+                    div.innerHTML = '还有' + time + '秒跳转到主页';
+                    time--;
+                } else {
+                    clearInterval(timer);
+                    location.href = 'http://www.baidu.com'
+                }
+            }, 1000);
+        })
+    </script>
+</body>
+
+</html>

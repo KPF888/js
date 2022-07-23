@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.setInterval
+        //语法规范: window.setInterval(回调函数,间隔时间毫秒) window可省略
+        //每隔一段时间就执行一次
+        var num = 0;
+        setInterval(() => {
+            num += 1;
+            console.log('时间过了' + num + '秒');
+        }, 1000);
+    </script>
+</body>
+
+</html>

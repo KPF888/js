@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>
+        按钮
+    </button>
+
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            //1.location.assign 页面重定向 记录浏览历史可以返回
+            // location.assign('http://www.baidu.com');
+
+            //2.location.replace 替换页面地址  不记录浏览历史 不可返回
+            // location.replace('http://www.baidu.com');
+
+            //3.location.reload 页面刷新 如果参数写true 则页面会强制刷新
+            location.reload(true);
+        })
+    </script>
+</body>
+
+</html>

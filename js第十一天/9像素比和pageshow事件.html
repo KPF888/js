@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //打印物理像素比 dpr
+        // console.log(window.devicePixelRatio);
+
+        window.addEventListener('pageshow', function (e) {//页面显示时执行不会被浏览器缓存影响
+            if (e.persisted) {//返回true 则说明是浏览器缓存取出来的页面 也弹出 配合resize使用 重置rem字体大小
+                alert('11');
+            }
+        })
+    </script>
+</body>
+
+</html>

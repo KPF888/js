@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 5px solid red;
+            padding: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容
+    </div>
+
+    <script>
+        //scroll系列
+        //div.scrollWidth 与client一样不包含边框 包含padding 而且是返回实际内容的大小
+        var div = this.document.querySelector('div');
+        console.log(div.scrollHeight);
+
+        //scroll滚动事件 当滚动条被拖动时触发 scrollTop返回的是上方被卷曲的内容大小
+        div.addEventListener('scroll', function () {
+            console.log(parseInt(div.scrollTop));
+        })
+    </script>
+</body>
+
+</html>

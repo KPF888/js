@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点我启动夏雨荷</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        //优化算法 让每个对象的定时器有自己的名字
+        function animate(obj, target) {
+            //如果一直点击按钮就会一直加速
+            //解决方法是每次调用函数都先清除之前这个对象的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                    return 0;//加了这一句才算真正停下来
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 10);
+        }
+
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        animate(div, 300);
+        btn.addEventListener('click', function () {
+            animate(span, 200);
+        })
+    </script>
+</body>
+
+</html>

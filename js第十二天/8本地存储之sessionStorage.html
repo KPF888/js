@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button class="set">添加数据</button>
+    <button class="get">查询数据</button>
+    <button class="remove">删除数据</button>
+    <button class="del">清除所有数据</button>
+
+    <script>
+        //生命周期为该页面
+        console.log(sessionStorage);
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del');
+
+        //点击添加数据按钮时 添加数据到sessionStorage中
+        set.addEventListener('click', function () {
+            var val = ipt.value;
+            sessionStorage.setItem('uname', val);
+        })
+
+        //点击查询数据时查询数据
+        get.addEventListener('click', function () {
+            console.log(sessionStorage.getItem('uname'));
+        })
+
+        //点击移除按钮
+        remove.addEventListener('click', function () {
+            sessionStorage.removeItem('uname');
+        })
+
+        //点击清除所有数据
+        del.addEventListener('click', function () {
+            sessionStorage.clear();
+        })
+    </script>
+</body>
+
+</html>

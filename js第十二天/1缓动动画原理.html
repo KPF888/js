@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点我启动夏雨荷500</button>
+    <button class="btn800">点我启动夏雨荷800</button>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        //缓动动画
+        //优化算法 让每个对象的定时器有自己的名字
+        function animate(obj, target) {
+            //如果一直点击按钮就会一直加速
+            //解决方法是每次调用函数都先清除之前这个对象的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                //步长必须写在定时器内部 因为每一步都要重新计算
+                //需要进行一步向上取整  因为最后会出现步长等于0的情况
+                //如果是倒退时 step为负数 此时应该向下取整
+                var step = (target - obj.offsetLeft) / 10;
+                step = Math.ceil(step);
+                console.log(obj.offsetLeft);
+                console.log(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    obj.timer = null;//加了这一句才算真正停下来
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        animate(div, 300);
+
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        })
+
+        //缓动动画让每次走的步长等于  step=(目标 - 已经走过的距离)/10
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //整个页面加载完之后再执行下面的内容  就可以把javascript写到页面任何位置
+        //1.传统方式  如果有多个函数则会有冲突，以最后一个为准
+        // window.onload = function () {
+        //     var btn = document.querySelector('button');
+
+        //     btn.addEventListener('click', function () {
+        //         alert('点击按钮');
+        //     })
+        // }
+
+        //2.最提倡写法  监听事件
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+
+            btn.addEventListener('click', function () {
+                alert('点击按钮');
+            })
+        })
+
+        window.addEventListener('load', function () {
+            alert('window弹框');
+        })
+
+        //3.窗口加载事件DOMContentLoaded ie9以上 不包含 css 图片等  只要DOM加载完就执行
+        window.addEventListener('DOMContentLoaded', function () {//因为少所以快
+            alert('33');
+        })
+
+    </script>
+</head>
+
+<body>
+    <button>按钮</button>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.window.setTimeout(函数,时间毫秒)  省略前面的window
+        //2.第二个参数可以省略，若省略的话那就默认马上执行
+        //3.第一个参数可以直接写函数也可以写函数名  也可以写 '函数名()' 但不推荐
+        //4.页面中可能有很多的定时器，我们一般给定时器加标识符(名字)
+        var timer1 = setTimeout(callback, 3000);
+        var timer2 = setTimeout(callback, 5000);
+
+        function callback() {
+            alert('爆炸');
+        }
+    </script>
+</body>
+
+</html>

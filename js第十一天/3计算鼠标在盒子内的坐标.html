@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        //计算鼠标在盒子内的位置 用鼠标到页面的距离 减去盒子到页面的距离
+        var div = document.querySelector('div');
+        div.addEventListener('mousemove', function (e) {
+            var x = e.pageX - div.offsetLeft;
+            var y = e.pageY - div.offsetTop;
+
+            div.innerHTML = 'x坐标是' + x + 'y坐标是' + y;
+        })
+    </script>
+</body>
+
+</html>

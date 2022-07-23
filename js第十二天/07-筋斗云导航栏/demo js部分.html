@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .c-nav {
+            width: 900px;
+            height: 42px;
+            background: #fff url(images/rss.png) no-repeat right center;
+            margin: 100px auto;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .c-nav ul {
+            position: absolute;
+        }
+
+        .c-nav li {
+            float: left;
+            width: 83px;
+            text-align: center;
+            line-height: 42px;
+        }
+
+        .c-nav li a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            height: 42px;
+        }
+
+        .c-nav li a:hover {
+            color: white;
+        }
+
+        .c-nav li.current a {
+            color: #0dff1d;
+        }
+
+        .cloud {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url(images/cloud.gif) no-repeat;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var ul = document.querySelector('ul');
+            var lis = ul.children;
+            var cloud = document.querySelector('.cloud');
+
+            //鼠标经过云飘过来
+            for (var i = 0; i < lis.length; i++) {
+                // 注册序号
+                lis[i].setAttribute('index', i);
+
+                lis[i].addEventListener('mouseenter', function () {
+                    var moveWidth = this.getAttribute('index') * lis[0].offsetWidth;
+                    animate(cloud, moveWidth);
+                })
+
+                //鼠标点击后让那个位置等于原点
+                var back = 0;
+                lis[i].addEventListener('click', function () {
+                    back = this.getAttribute('index') * lis[0].offsetWidth;
+                })
+
+                //鼠标离开回到原点
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(cloud, back);
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="javascript:;">首页新闻</a></li>
+            <li><a href="javascript:;">师资力量</a></li>
+            <li><a href="javascript:;">活动策划</a></li>
+            <li><a href="javascript:;">企业文化</a></li>
+            <li><a href="javascript:;">招聘信息</a></li>
+            <li><a href="javascript:;">公司简介</a></li>
+            <li><a href="javascript:;">我是佩奇</a></li>
+            <li><a href="javascript:;">啥是佩奇</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

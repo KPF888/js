@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .engin {
+            width: 200px;
+            height: 22px;
+            font-size: 22px;
+            line-height: 22px;
+            font-family: 微软雅黑;
+            margin: 100px auto;
+            cursor: pointer;
+        }
+
+        .login {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -100px;
+            /* transform: translate(-50%, -50%); */
+            width: 400px;
+            height: 200px;
+            background-color: #fff;
+            box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, .3);
+            border: 1px solid #ededed;
+        }
+
+        .login_title {
+            position: relative;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 40px;
+            cursor: move;
+        }
+
+        .login_title span {
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            font-size: 12px;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ebebeb;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .login_btn {
+            width: 40%;
+            height: 30px;
+            border: 1px solid #ebebeb;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .login-input {
+            float: left;
+            width: 70%;
+            height: 30px;
+            margin: 5px auto;
+            border: 1px solid #ebebeb;
+
+        }
+
+        .login_name label,
+        .login_pw label {
+            float: left;
+            margin-top: 10px;
+            width: 90px;
+            text-align: right;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {//DOM加载完成执行以下代码
+            //点击engin时显示遮罩层和登录框
+            var engin = document.querySelector('.engin');
+            var login = document.querySelector('.login');
+            var mask = document.querySelector('.mask');
+            var closebtn = document.querySelector('.login_title').children[0];
+            var login_title = document.querySelector('.login_title');
+
+            engin.addEventListener('click', function () {
+                login.style.display = 'block';
+                mask.style.display = 'block';
+            })
+
+            //点击关闭按钮是隐藏遮罩层和登录框
+            closebtn.addEventListener('click', function () {
+                login.style.display = 'none';
+                mask.style.display = 'none';
+            })
+
+            //鼠标按下拖拽区域获取鼠标的页面坐标
+            login_title.addEventListener('mousedown', function (e) {
+                //得到鼠标距离登录框的距离
+                //上面不能用/* transform: translate(-50%, -50%); */否则offset返回值是变换之前的值
+                var x = e.pageX - login.offsetLeft;
+                var y = e.pageY - login.offsetTop;
+
+                //鼠标按下并且移动的时候 鼠标到页面的距离减去鼠标到登录框的距离给登录框
+                document.addEventListener('mousemove', move);
+                function move(e) {
+                    login.style.left = e.pageX - x + 'px';
+                    login.style.top = e.pageY - y + 'px';
+                    login.style.margin = 0;//重置上面的居中所用的负值外边距
+                }
+
+                //鼠标松开 注销鼠标移动的事件
+                document.addEventListener('mouseup', function () {
+                    document.removeEventListener('mousemove', move);
+                })
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="engin">
+        点我打开登录框
+    </div>
+    <div class="login">
+        <div class="login_title">
+            登录会员
+            <span><a href="">关闭</a></span>
+        </div>
+        <div class="login_name">
+            <label>用户名：</label>
+            <input type="text" class="login-input" placeholder="请输入用户名" name="info[username]">
+        </div>
+        <div class="login_pw clearfix">
+            <label>登录密码：</label>
+            <input type="password" class="login-input" placeholder="请输入密码" name="info[pwd]">
+        </div>
+        <div class="login_btn">
+            <a href="javascript:;">登录会员</a>
+        </div>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div class="mask">
+    </div>
+
+</body>
+
+</html>
