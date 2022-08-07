@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
+    //轮播图
     var Focus = document.querySelector('.focus');
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
@@ -50,7 +51,6 @@ window.addEventListener('DOMContentLoaded', function () {
     arrow_r.addEventListener('click', function () {
         if (flag) {
             flag = false;
-            console.log(lis.length - 1);
             if (num == lis.length - 1) {
                 ul.style.left = 0;
                 num = 0;
@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 flag = true;
             });
 
-            circles = num == 4 ? 0 : num;
+            circles = num == lis.length - 1 ? 0 : num;
             getCircleWhite(circles);
         }
     })
@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
             if (num == 0) {
                 ul.style.left = -(lis.length - 1) * Focus.offsetWidth + 'px';
-                num = 4;
+                num = lis.length - 1;
             }
 
             num--;
