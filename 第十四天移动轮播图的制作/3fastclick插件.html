@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fastclick.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function () {
+                FastClick.attach(document.body);
+            }, false);
+        }
+        // 解决移动端点击有300毫秒延迟的问题 因为页面会侦听是否点击两次缩放
+        // 1.禁止缩放
+        // 2.写一个函数来调用，但是需要每个对象都调用一次
+        // 3.用fastclick插件
+
+        var div = document.querySelector('div');
+        var clickDate = 0;
+        var touchDate = 0;
+        div.addEventListener('click', function () {
+            clickDate = +new Date();
+        })
+        div.addEventListener('touchstart', function () {
+            touchDate = +new Date();
+        })
+        div.addEventListener('touchend', function () {
+            console.log(clickDate - touchDate);
+        })
+
+    </script>
+</body>
+
+</html>

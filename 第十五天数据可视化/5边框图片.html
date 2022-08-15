@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            border-image-source: url(./数据可视化项目/images/border.jpg);
+            border-image-slice: 168;
+            /* 上下左右都切30px */
+            border-image-width: 30px;
+            /* 不会把内容向里面挤 */
+            border-image-repeat: round;
+            /* repeat平铺 round铺满 stretch拉伸（默认） */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 必须切成九宫格，保证四个角的完整性 -->
+    <div>奥利给</div>
+</body>
+
+</html>

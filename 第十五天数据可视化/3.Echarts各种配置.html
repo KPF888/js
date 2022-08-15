@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/echarts.min.js"></script>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            border: .0133rem solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var myEchart = echarts.init(document.querySelector('.box'));
+        var option = {
+            title: {
+                //为主标题
+                text: '主标题'
+            },
+            tooltip: {
+                //鼠标在图表中显示的提示
+                trigger: 'axis'
+            },
+            legend: {
+                //图例，每一项的标题，副标题
+                data: ['直播营销', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+            },
+            grid: {
+                //图像网格，可以设置包不包含坐标轴,如果不包含的话那么图表的坐标轴可能会溢出区域
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    //以图片的形式下载图表
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                //category以data为根据生成x坐标轴的刻度名
+                type: 'category',
+                boundaryGap: false,//刻度名是否在两刻度之间
+                data: ['星期一', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                //value根据值显示刻度名
+                type: 'value'
+            },
+            series: [//系列列表,里面放着若干对象，决定有几条线,每个对象里面有若干个属性
+                {
+                    //对象名，影响tolltip和legend里的显示
+                    name: '直播营销',
+                    //图表类型是线形图
+                    type: 'line',
+                    stack: 'Total1',//数据堆叠，后一个对象会加上前一个对象的值再显示，修改不一样的名字或者直接删除则不会堆叠
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name: 'Union Ads',
+                    type: 'line',
+                    stack: 'Total2',
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: 'Video Ads',
+                    type: 'line',
+                    stack: 'Total3',
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: 'Direct',
+                    type: 'line',
+                    stack: 'Total4',
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name: 'Search Engine',
+                    type: 'line',
+                    stack: 'Total5',
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ],
+            color: ['pink', 'blue', 'red', 'skyblue', 'green']//控制每条线的颜色
+        };
+        myEchart.setOption(option);
+    </script>
+</body>
+
+</html>

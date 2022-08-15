@@ -1,0 +1,229 @@
+/* 修改最大宽度为1280px 跟着设计稿走 */
+
+@media screen and (min-width:1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    background-color: #fff;
+}
+
+a {
+    color: #666;
+    text-decoration: none !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* .nav {
+    padding-left: 15px;
+} */
+
+.content .news,
+.content .publish {
+    margin-right: 10px;
+}
+
+.nav_hd {
+    text-align: center;
+    background-color: #3288C6;
+}
+
+.nav_hd img {
+    max-width: 100%;
+}
+
+.nav_hd span {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* 进入超小屏幕，logo图片隐藏 */
+/* 显示logo文字 */
+
+
+.nav ul {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 进入小屏和超小屏，nav 里的li浮动，宽度百分之二十 */
+@media screen and (max-width:991px) {
+    .nav li {
+        float: left;
+        width: 20%;
+    }
+
+    .nav {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .nav ul li a {
+        font-size: 14px;
+        padding-left: 8px;
+    }
+
+    /* 超小屏幕下news模块的第一个图片宽度100%，后面的图片宽度50% */
+    .news ul li {
+        width: 50%;
+    }
+
+    .news ul li:first-child {
+        width: 100%;
+    }
+
+    .publish h3 {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    .nav ul li a {
+        padding-left: 3px;
+    }
+}
+
+.nav li a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+
+.nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.nav ul li a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+/* 新闻 */
+.news li {
+    float: left;
+    width: 25%;
+    height: 128px;
+}
+
+
+.news li {
+    padding-right: 10px;
+}
+
+.news li:nth-child(n+2) {
+    margin-bottom: 10px;
+}
+
+.news li:nth-child(n+2) p {
+    padding: 5px;
+}
+
+.news li:first-child {
+    width: 50%;
+    height: 266px;
+    padding-right: 10px;
+}
+
+.carousel-inner img,
+.carousel-inner {
+    height: 266px !important;
+}
+
+.news li>a {
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.news li p {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    height: 41px;
+    width: 100%;
+    text-align: center;
+    line-height: 41px;
+    font-size: 14px;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.news img {
+    width: 100%;
+    height: 100%;
+}
+
+.news li:first-child p {
+    text-align-last: left;
+    font-size: 22px;
+}
+
+/* 发表 */
+.publish {
+    border-top: 1px solid #ccc;
+}
+
+.publish>.row {
+    border-bottom: 1px solid #ccc;
+}
+
+.pic {
+    margin-top: 10px;
+}
+
+.pic img {
+    width: 100% !important;
+}
+
+/* ad */
+
+.ad>div {
+    margin-right: 10px;
+}
+
+.ad_img a {
+    width: 100%;
+}
+
+.ad_img img {
+    width: 100%;
+}
+
+.hot_sou {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 0 20px 20px;
+}
+
+.hot_sou span {
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+.hot_sou p {
+    font-size: 12px;
+}

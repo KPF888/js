@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one two"></div>
+    <button>开关灯</button>
+    <script>
+        // classList能返回元素的类名 只支持ie10以上 不过移动端开发不用考虑兼容性
+        var div = document.querySelector('div');
+        var btn = document.querySelector('button');
+        console.log(div.classList[0]);
+        //添加类名 在后面追加类名 注意类名前面不要加点
+        div.classList.add('three');
+        // 移除类名
+        div.classList.remove('two');
+        //切换类名 有就删掉，没有就加上
+        div.classList.toggle('one');
+
+        //开关灯
+        btn.addEventListener('click', function () {
+            document.body.classList.toggle('bg');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 1.touchtarget获取手指初始坐标
+        // 2.touchmove计算移动距离
+        // 3.touchend手指离开目标
+        var div = document.querySelector('div');
+
+        var startX = 0;//手指原来的位置
+        var startY = 0;
+
+        div.addEventListener('touchstart', function (e) {
+            startX = e.targetTouches[0].pageX;
+            startY = e.targetTouches[0].pageY;
+        })
+
+        div.addEventListener('touchmove', function (e) {
+            var moveX;
+            var moveY;
+            // 移动的距离=手指移动的距离
+            moveX = e.targetTouches[0].pageX - startX;
+            moveY = e.targetTouches[0].pageY - startY;
+            // 手指起始的位置=手指现在的位置
+            startX = e.targetTouches[0].pageX;
+            startY = e.targetTouches[0].pageY;
+            div.style.left = div.offsetLeft + moveX + 'px';
+            div.style.top = div.offsetTop + moveY + 'px';
+            e.preventDefault();//阻止屏幕滚动的默认行为
+        })
+
+        div.addEventListener('touchend', function () {
+            console.log('鼠标离开');
+        })
+    </script>
+</body>
+
+</html>
